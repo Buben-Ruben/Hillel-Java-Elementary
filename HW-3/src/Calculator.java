@@ -7,7 +7,7 @@ public class Calculator {
         double firstNum = sc.nextDouble();
         System.out.print("Enter second num: ");
         double secondNum = sc.nextDouble();
-        System.out.println("\nEnter what operation you want to perform with the number 5 and 0.");
+        System.out.println("\nEnter what operation you want to perform with the number "+firstNum+" and "+secondNum);
         System.out.println("Operation example: (+, -, * , /), type exit - to exit the program");
         System.out.print("\nEnter your choice: ");
         String choice = sc.next();
