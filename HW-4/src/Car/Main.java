@@ -20,10 +20,10 @@ public class Main {
                     command = "null";
                 }
                 case "new" -> {
-                    System.out.print("\nEnter the make of the car: ");
-                    type = sc.nextLine();
-                    System.out.print("Enter "+type+"'s model: ");
-                    model = sc.nextLine();
+                    System.out.print("\nEnter the make of the car: ");                  //Why put break in case if the code works well without it,
+                    type = sc.nextLine();                                               //but if you write break in case,
+                    System.out.print("Enter "+type+"'s model: ");                       //then the idea will prompt you to change (case: break;) to (case -> { }) 
+                    model = sc.nextLine();                                              //(as far as I know there isn't much of a difference.)
                     System.out.print("Enter the color of car: ");
                     setColor = sc.nextLine();
                     car = new Car(type, model, setColor);
