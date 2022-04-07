@@ -22,9 +22,9 @@ public class Car {
     public void setFuel(int fuel) {
         this.fuel = fuel;
     }
-    public void Speed(int argument) {
-        if (argument > 0) {
-            speed += argument;
+    public void speed(int argument) {               //I intentionally named this method Speed, 
+        if (argument > 0) {                         //not setSpeed, because it's not really a standard setter,
+            speed += argument;                      //since conditional and mathematical operations are performed here.
         } else {
             speed -= argument;
         }
