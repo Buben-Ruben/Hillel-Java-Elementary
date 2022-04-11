@@ -6,7 +6,6 @@ public class Car {
     private String color;
     private int speed;
     private int fuel;
-
     public Car() {
     }
     public Car(String type, String model, String color) {
@@ -14,7 +13,15 @@ public class Car {
         this.model = model;
         this.color = color;
     }
-
+    public Car(byte speed) {                //
+        this.speed = speed;                 //
+    }                                       //
+    public Car(short speed) {               //
+        this.speed = speed;                 //   Polymorphism
+    }                                       //
+    public Car(int speed) {                 //
+        this.speed = speed;                 //
+    }                                       //
     public void setColor(String color) {
         this.color = color;
     }
@@ -33,13 +40,21 @@ public class Car {
         return "\nCar Info [type=" + type + ", model=" + model + ", color=" + color + ", speed=" + speed + ", fuel=" + fuel +"]";
     }
 
+    public void makeSound() {
+        System.out.println("\nYou need to pass the value to the method.");
+    }
+    public void makeSound(String value) {
+        System.out.println(value);
+    }
+
     public void help() {
         System.out.println("""
-                |\t[new]\t\t- to create new car
+                |\t[new]\t- to create new car
                 |\t[color]\t- to set car's color
                 |\t[fuel]\t- to set the amount of fuel
-                |\t[speed]\t\t- to increase/decrease car speed
+                |\t[speed]\t- to increase/decrease car speed
                 |\t[info]\t- get car info
-                |\t[exit]\t\t- close program""");
+                |\t[sound]\t- make sound
+                |\t[exit]\t- close program""");
     }
 }

@@ -10,11 +10,14 @@ public class Main {
         String type;
         String model;
         String setColor;
+        String sound;
         int setSpeed;
         int setFuel;
+        Toyota toyota = new Toyota();
+        toyota.makeSound();
         System.out.print("\nMain Menu\n");
-        while (command!=null){
-            switch (command) {
+        while (command != null) {
+            switch(command) {
                 case "help":
                     car.help();
                     command = "null";
@@ -49,6 +52,17 @@ public class Main {
                     break;
                 case "info":
                     System.out.println(car.carInfoToString());
+                    command = "null";
+                    break;
+                case "sound":
+                    System.out.print("\nEnter what sound you want to transmit. [Enter] - to send an empty field: ");
+                    sound = sc.nextLine();
+                    if (sound.length() == 0) {
+                        car.makeSound();
+                    } else {
+                        System.out.print("Sound: ");
+                        car.makeSound(sound);
+                    }
                     command = "null";
                     break;
                 case "exit":
