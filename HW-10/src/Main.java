@@ -1,36 +1,25 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-
 public class Main {
     public static void main(String[] args) {
+        MyArrayList<Integer> arrayList = new MyArrayList<>();
 
-        ArrayList<Integer> integers = new ArrayList<>();
-        integers.add(0);
-        for (int i = 0; i < 3; i++) integers.add((int) (Math.random()*(10)));
-        integers.add(0);
-
-        System.out.println("\nArrayList:  "+integers);
-        Object[] arr = integers.toArray();
-        System.out.println("\n(1) ArrayList to Array:  "+Arrays.toString(arr));
-        System.out.println("(2) Does the ArrayList contain the number 0:  "+integers.contains(0));
-        System.out.println("(3) Index of the first number encountered 0:  "+integers.indexOf(0));
-        System.out.println("(4) Index of the last number encountered 0:  "+integers.lastIndexOf(0));
-        System.out.println("(5) Number of ArrayList elements:  "+integers.size());
-        integers.add(5);
-        System.out.println("(6) Adding the number 5 to the end of the ArrayList:  "+integers);
-        integers.add(1, 10);
-        System.out.println("(6.1) Adding the number 10 to the specified position:  "+integers);
-        integers.remove(0);
-        System.out.println("(7) Deleted chosen number:  "+integers);
-        System.out.println("(8) Get element at index 0:  "+integers.get(0));
-        System.out.println("(9) Replacing the selected element with another:  "+integers.set(2, 0)+" changed to 0 "+integers);
-
-        System.out.println("(10) Creating an iterator variable:  Iterator<Integer> iterator = integers.iterator();");
-        System.out.print("(11) Using method next() and method hasNext to output ArrayList:  ");
-        Iterator<Integer> iterator = integers.iterator(); //iterator()
-        while (iterator.hasNext()) {
-            System.out.print("["+iterator.next()+", ["+iterator.hasNext()+"]] ");
-        }
+        System.out.println("\n\n(1) isEmpty() Returns True if List is empty:  " + arrayList.isEmpty());
+        arrayList.add(1);
+        System.out.println("(2) add() Adding the number to the end of the List:  " + arrayList);
+        arrayList.add(2);
+        arrayList.add(3);
+        arrayList.add(4);
+        arrayList.add(5);
+        System.out.println("//Add some more numbers...  " + arrayList);
+        System.out.println("(3) size() Returns size of List:  " + arrayList.size());
+        System.out.println("(4) get(1) Returns element at index 1:  " + arrayList.get(1));
+        arrayList.remove(3);
+        System.out.println("(5) remove(3) Removes element at index 3:  " + arrayList);
+        arrayList.set(0,3);
+        System.out.println("(6) set(0, 0) Replaces the element at index 0 with the specified value:  " + arrayList);
+        System.out.println("(7) hasNext() Returns True if if there is a next element in the list:  " + arrayList.iterator().hasNext());
+        arrayList.add(0, 4);
+        System.out.println("(8) add(1, 4) Adds an element to the selected position:  " + arrayList);
+        System.out.println("(9) indexOf(3) Returns the index of the first number encountered 3:  " + arrayList.indexOf(3));
+        System.out.println("(10) lastIndexOf(3) Returns the index of the first number encountered 3:  " + arrayList.lastIndexOf(3));
     }
 }
