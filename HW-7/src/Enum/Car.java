@@ -6,7 +6,7 @@ public enum Car {
     FORD("Ford"),
     TOYOTA("Toyota");
 
-    private String name;
+    private final String name;
     Car (String name) {
         this.name = name;
     }
